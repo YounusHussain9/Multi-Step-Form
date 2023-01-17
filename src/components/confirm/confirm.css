@@ -1,0 +1,33 @@
+.confirm-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  outline: none;
+  background-color: skyblue;
+  border: 2px solid skyblue;
+  border-radius: 0.2rem;
+  font-weight: 600;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+.ul {
+  list-style: none;
+  padding: 2rem;
+}
+
+.ul > li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  margin: 1rem;
+}
