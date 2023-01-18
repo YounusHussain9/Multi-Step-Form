@@ -25,12 +25,12 @@ const Userform = () => {
   const [step, setStep] = useState(0);
 
   const Next = (value) => {
-     if(firstname && lastname && email && ocupation && city && bio){
-    setStep(value);  
+   if(!firstname || !lastname || !email ){
+  setIsError("⚠ Please ! Fill all inputs")
+  }else{
     setIsError('')
-  } else{
-    setIsError("⚠ Please ! Fill all inputs")
-  }  
+    setStep(value);     
+  } 
 
   };
 
@@ -74,8 +74,6 @@ const Userform = () => {
                   back={Prev}
                   values={values}
                   onChange={onHandleChange}
-                  error ={isError}
-
                 />
               </>
             );

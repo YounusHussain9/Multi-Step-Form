@@ -24,7 +24,7 @@ const Userdetails = ({ next, step, onChange, values , error }) => {
         onChange={onChange}
         defaultValue={email}
       />
-<h3>{error}</h3>
+<h3 style={{textAlign:'center'}}>{error}</h3>
       <div className="button-container">
         <button
           onClick={() => {

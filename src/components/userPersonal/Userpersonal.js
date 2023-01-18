@@ -1,9 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import DenseAppBar from "../../material-ui-components/Appbar";
 import "./userpersonal.css";
 
-const Userpersonal = ({ back, step, next, onChange, values }) => {
+const Userpersonal = ({ back, step, next, onChange, values  }) => {
   const { ocupation, city, bio } = values;
+  const [isError , setIsError] = useState('');
+
   return (
     <>
       <div className="uf-input-container">
@@ -27,7 +30,7 @@ const Userpersonal = ({ back, step, next, onChange, values }) => {
           onChange={onChange}
           defaultValue={bio}
         />
-
+<h3 style={{textAlign:'center'}}>{isError}</h3>
         <div className="button-container">
           <button
             onClick={() => {
@@ -38,7 +41,11 @@ const Userpersonal = ({ back, step, next, onChange, values }) => {
           </button>
           <button
             onClick={() => {
+          if(!ocupation || !bio || !city){
+            setIsError("⚠ Please ! Fill all inputs")
+          }else{
               next(step + 1);
+          }
             }}
           >
             Continue
